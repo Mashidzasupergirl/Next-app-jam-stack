@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import Products from './Products'
+import Products from './products'
 // import contentful
 
 

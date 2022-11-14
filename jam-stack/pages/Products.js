@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import React, { useState } from 'react'
 const contentful = require('contentful')
 
 const client = contentful.createClient({
@@ -7,19 +7,16 @@ const client = contentful.createClient({
     accessToken: 'jBpJfzM4AjwUYNsRPRfp3p3p9S3jY0opgQRW2kdiAvA'
 })
 
-function Products() {
-
-    const [data, setData] = useState([])
-    // console.log('Hello, I am here')
-    useEffect(() => {
-        client.getEntries()
-            .then((response) => setData(response.items))
-            .catch(console.error)
-    }, [])
-
+function products() {
+    // const [data, setData] = useState([])
+    console.log('Hello, I am here')
+    client.getEntries()
+        .then((response) => console.log(response.items))
+        .catch(console.error)
+        
     return (
-        <div>{data.map((product, i) => <p key={i}>{product.title}</p>)}</div>
+        <div>products</div>
     )
 }
 
-export default Products
+export default products
